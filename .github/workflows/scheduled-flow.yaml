@@ -1,11 +1,13 @@
-name: Trigger action on CRON 
+name: Trigger action on CRON
+
 on:
   schedule:
-  #* is a  special character in YAML so we have to quote this string
-  - cron: '*/30 * * * *'
-  jobs:
-    test-schedule:
-      runs-on: ubuntu-latest
-      steps:
-        - name: run every half an hour
-        run: echo "Rummng every Thirty minutes"
+    # * is a special character in YAML so we have to quote this string
+    - cron: '*/30 * * * *'
+
+jobs:
+  test-schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run every half an hour
+        run: echo "Running every Thirty minutes"
